@@ -1,0 +1,26 @@
+-- Indexes for spotify.sqlite + Ratings table
+
+-- Ratings
+CREATE INDEX IF NOT EXISTS idx_ratings_user_id ON Ratings(user_id);
+CREATE INDEX IF NOT EXISTS idx_ratings_album_rating_user ON Ratings(album_id, rating, user_id);
+
+-- albums
+CREATE INDEX IF NOT EXISTS idx_albums_popularity ON albums(popularity);
+CREATE INDEX IF NOT EXISTS idx_albums_release_date ON albums(release_date);
+CREATE INDEX IF NOT EXISTS idx_albums_pop_date ON albums(popularity, release_date);
+CREATE INDEX IF NOT EXISTS idx_albums_type_date ON albums(album_type, release_date);
+CREATE INDEX IF NOT EXISTS idx_albums_id_release ON albums(id, release_date);
+CREATE INDEX IF NOT EXISTS idx_albums_year_expr ON albums(strftime('%Y', release_date / 1000, 'unixepoch'));
+CREATE INDEX IF NOT EXISTS idx_albums_year_pop_expr ON albums(strftime('%Y', release_date / 1000, 'unixepoch'), popularity);
+
+-- artists
+CREATE INDEX IF NOT EXISTS idx_artists_name ON artists(name);
+
+-- r_albums_artists
+CREATE INDEX IF NOT EXISTS idx_raa_album_id ON r_albums_artists(album_id);
+CREATE INDEX IF NOT EXISTS idx_raa_artist_id ON r_albums_artists(artist_id);
+CREATE INDEX IF NOT EXISTS idx_raa_artist_album ON r_albums_artists(artist_id, album_id);
+
+-- r_artist_genre
+CREATE INDEX IF NOT EXISTS idx_rag_artist_id ON r_artist_genre(artist_id);
+CREATE INDEX IF NOT EXISTS idx_rag_artist_genre ON r_artist_genre(artist_id, genre_id);
