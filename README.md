@@ -1,7 +1,7 @@
 # SQL_Spotify_Data_Base_Assignment_4_Aggregations_and_Nested_Queries
 1. Objective
     
- This assignment examines SQL queries again, now placing emphasis 
+ This repo examines SQL queries again, now placing emphasis 
 on grouping with aggregation and nested queries.
 ---------------------------------------------------------------------------------------
 2. Prerequisites
