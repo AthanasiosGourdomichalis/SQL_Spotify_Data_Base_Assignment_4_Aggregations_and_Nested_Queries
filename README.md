@@ -1,4 +1,4 @@
-# SQL_Spotify_Data_Base_Assignment_4_Aggregations_and_Nested_Queries
+# SQL Spotify Data Base part 4: Aggregations and Nested Queries
 1. Objective
     
  This repo examines SQL queries again, now placing emphasis 
